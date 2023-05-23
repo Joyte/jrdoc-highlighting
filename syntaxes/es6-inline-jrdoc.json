@@ -1,0 +1,75 @@
+{
+    "injectionSelector": "L:source.js -comment, L:source.ts -comment",
+    "patterns": [
+        {
+            "begin": "(\\/\\*jrdoc\\*\\/) ?(`)",
+            "beginCaptures": {
+                "1": {
+                    "name": "comment.block.jrdoc"
+                },
+                "2": {
+                    "name": "punctuation.definition.string.begin.js"
+                }
+            },
+            "end": "^\\s*(`)",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.js"
+                }
+            },
+            "patterns": [
+                {
+                    "name": "keyword.control.deprecated.jrdoc",
+                    "match": "^\\s*@depreciated\\s*$"
+                },
+                {
+                    "name": "keyword.control.optional.jrdoc",
+                    "match": "^\\s*@optional\\s*$"
+                },
+                {
+                    "begin": "^\\s*@param",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.control.param.jrdoc"
+                        }
+                    },
+                    "end": "(\\n|$)",
+                    "patterns": [
+                        {
+                            "match": "(where|type|name):(\\S+)",
+                            "captures": {
+                                "1": {
+                                    "name": "entity.name.tag.jrdoc"
+                                },
+                                "2": {
+                                    "name": "string.unquoted.value.jrdoc"
+                                }
+                            }
+                        },
+                        {
+                            "name": "keyword.control.deprecated.jrdoc",
+                            "match": "depreciated"
+                        },
+                        {
+                            "name": "keyword.control.optional.jrdoc",
+                            "match": "optional"
+                        },
+                        {
+                            "match": "\\|(.*?)$",
+                            "captures": {
+                                "1": {
+                                    "name": "comment.line.description.jrdoc"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.jrdoc",
+                    "match": "^(?!\\s*@depreciated\\s*$|\\s*@optional\\s*$|\\s*@param).*"
+                }
+            ]
+        }
+    ],
+    "scopeName": "inline.es6-jrdoc"
+}
