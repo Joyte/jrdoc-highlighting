@@ -3,7 +3,7 @@
     "displayName": "Jrdoc Highlighting",
     "description": "Syntax highlighting in jrdoc multiline strings",
     "version": "0.8.0",
-    "publisher": "Joyte",
+    "publisher": "SinelServers",
     "icon": "docs/logo.png",
     "engines": {
         "vscode": "^1.19.0"
