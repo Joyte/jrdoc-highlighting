@@ -2,7 +2,7 @@
     "name": "jrdoc-highlighting",
     "displayName": "Jrdoc Highlighting",
     "description": "Syntax highlighting in jrdoc multiline strings",
-    "version": "0.8.1",
+    "version": "0.8.2",
     "publisher": "SinelServers",
     "icon": "docs/logo.png",
     "engines": {

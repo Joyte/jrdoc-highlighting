@@ -23,10 +23,6 @@
                     "match": "^\\s*@depreciated\\s*$"
                 },
                 {
-                    "name": "keyword.control.optional.jrdoc",
-                    "match": "^\\s*@optional\\s*$"
-                },
-                {
                     "begin": "^\\s*@param",
                     "beginCaptures": {
                         "0": {
@@ -66,7 +62,7 @@
                 },
                 {
                     "name": "string.quoted.jrdoc",
-                    "match": "^(?!\\s*@deprecated\\s*$|\\s*@optional\\s*$|\\s*@param).*"
+                    "match": "^(?!\\s*@deprecated\\s*$|\\s*@param).*"
                 }
             ]
         }
