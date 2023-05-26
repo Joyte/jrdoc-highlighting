@@ -20,7 +20,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.deprecated.jrdoc",
-                    "match": "^\\s*@depreciated\\s*$"
+                    "match": "^\\s*@deprecated\\s*$"
                 },
                 {
                     "begin": "^\\s*@param",
@@ -61,8 +61,27 @@
                     ]
                 },
                 {
+                    "begin": "^\\s*@category",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.control.category.jrdoc"
+                        }
+                    },
+                    "end": "(\\n|$)",
+                    "patterns": [
+                        {
+                            "match": "\\s*(\\S+)$",
+                            "captures": {
+                                "1": {
+                                    "name": "entity.name.category.jrdoc"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "string.quoted.jrdoc",
-                    "match": "^(?!\\s*@deprecated\\s*$|\\s*@param).*"
+                    "match": "^(?!\\s*@deprecated\\s*$|\\s*@param|\\s*@category).*"
                 }
             ]
         }
