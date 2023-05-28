@@ -32,7 +32,7 @@
                     "end": "(\\n|$)",
                     "patterns": [
                         {
-                            "match": "(where|type|name):(\\S+)",
+                            "match": "(where|type|name|contentType):(\\S+)",
                             "captures": {
                                 "1": {
                                     "name": "entity.name.tag.jrdoc"
@@ -70,10 +70,10 @@
                     "end": "(\\n|$)",
                     "patterns": [
                         {
-                            "match": "\\s*(\\S+)$",
+                            "match": "\\s*([^\\s]+)$",
                             "captures": {
                                 "1": {
-                                    "name": "entity.name.category.jrdoc"
+                                    "name": "comment.line.description.jrdoc"
                                 }
                             }
                         }

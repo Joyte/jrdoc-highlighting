@@ -2,11 +2,15 @@
     "name": "jrdoc-highlighting",
     "displayName": "Jrdoc Highlighting",
     "description": "Syntax highlighting in jrdoc multiline strings",
-    "version": "0.8.3",
+    "version": "0.8.4",
     "publisher": "SinelServers",
     "icon": "docs/logo.png",
     "engines": {
         "vscode": "^1.19.0"
+    },
+    "scripts": {
+        "publish": "vsce publish",
+        "package": "vsce package"
     },
     "galleryBanner": {
         "color": "#dedede",
